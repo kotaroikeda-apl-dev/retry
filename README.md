@@ -3,6 +3,7 @@
 ```sh
 go run cmd/basic/main.go # リトライの基本を実装
 go run cmd/errorIs/main.go # 特定のエラーのみリトライ
+go run cmd/backoff/main.go # 指数関数的な待機時間を設定
 ```
 
 ## **学習ポイント**
@@ -11,6 +12,7 @@ go run cmd/errorIs/main.go # 特定のエラーのみリトライ
 2. **`fmt.Errorf("%w", err)`** を使ってエラーをラップし、**`errors.Is()`** でリトライ可能なエラーを判定できる。
 3. **`errors.Is()`** を使い、リトライすべきエラー（**`ErrNetwork`**）と即終了すべきエラー（**`ErrOther`**）を区別できる。
 4. **`rand.Intn(3)`** を使って異なるエラーをランダムに発生させ、リトライ処理の動作をテストできる。
+5. **`math.Pow(2, float64(i))`** を使って指数関数的な待機時間を設定できる。
 
 ## 作成者
 
