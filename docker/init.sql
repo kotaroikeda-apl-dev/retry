@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS users (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(50) NOT NULL,
+    balance INT NOT NULL DEFAULT 1000
+);
+
+INSERT INTO users (name, balance) VALUES ('Alice', 1000), ('Bob', 1500);
